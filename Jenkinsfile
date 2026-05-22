@@ -32,9 +32,12 @@ pipeline {
                 }
                 stage('run tests') {
                     steps {
-                        sh """
-                            npm test
-                          """
+                            script{
+                                     sh """
+                                        npm test
+                                    """
+                            }
+                       
                     }
                 }
                 stage('SonarQube Analysis') {
